@@ -1,0 +1,1 @@
+export 'package:fl_examen_final/widgets/slider_widget.dart';
