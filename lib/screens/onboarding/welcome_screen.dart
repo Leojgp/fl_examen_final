@@ -1,5 +1,6 @@
 import 'package:fl_examen_final/providers/user_provider.dart';
 import 'package:fl_examen_final/screens/onboarding/components/theme_selector.dart';
+import 'package:fl_examen_final/screens/settings/menu_especial.dart';
 import 'package:fl_examen_final/services/user_service.dart';
 import 'package:fl_examen_final/theme/theme_provider.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -218,6 +219,21 @@ class _InicioScreenState extends State<InicioScreen> {
                       );
                     },
                     child: Text(AppLocalizations.of(context)!.startNow),
+                  ),
+                ),
+              ),
+              const Spacer(),
+              Center(
+                child: SizedBox(
+                  width: 250,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        _slideTransition(const MenuEspecial()),
+                      );
+                    },
+                    child: Text('Menu Especial'),
                   ),
                 ),
               ),

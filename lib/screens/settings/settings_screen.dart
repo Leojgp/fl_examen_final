@@ -3,6 +3,7 @@ import 'package:fl_examen_final/providers/user_provider.dart';
 import 'package:fl_examen_final/screens/admin/portal/diet_management_portal.dart';
 import 'package:fl_examen_final/screens/onboarding/components/language_selector.dart';
 import 'package:fl_examen_final/screens/onboarding/components/theme_selector.dart';
+import 'package:fl_examen_final/screens/settings/menu_especial.dart';
 import 'package:fl_examen_final/theme/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_examen_final/screens/screens.dart';
@@ -178,6 +179,19 @@ class SettingsScreens extends StatelessWidget {
                       );
                     },
                   ),
+                  _buildOptionItem(
+                  context: context,
+                  icon: Icons.menu,
+                  title: AppLocalizations.of(context)!.logOut,
+                  onTap: () {
+                    FirebaseAuth.instance.signOut();
+                    Navigator.pushAndRemoveUntil(
+                      context,
+                      _slideTransition(const MenuEspecial()),
+                      (route) => false,
+                    );
+                  },
+                ),
                 const SizedBox(height: 5),
               ],
             ),
