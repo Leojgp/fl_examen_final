@@ -10,6 +10,7 @@ Future<Ingredient> getIngredientById(String ingredientId) async {
   return ingredient.data!;
 }
 
+
 Future<Ingredient> createIngredient(Ingredient ingredient) async {
   final ingredientDoc = await ingredientRef.add(ingredient);
   final ingredientData = await ingredientDoc.get();
